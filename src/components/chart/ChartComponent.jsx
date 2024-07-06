@@ -6,9 +6,9 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 
 const ChartComponent = ({data}) => {
-  const impacts = data.map(item => item.Impact);
+  const impacts = data?.map(item => item?.Impact) || "";
   console.log(impacts);
-  const quantities = data.map(item => item.quantity);
+  const quantities = data?.map(item => item?.quantity) || "";
  console.log(quantities);
   const chartData = {
     labels: impacts,

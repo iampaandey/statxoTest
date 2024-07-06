@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import ChartComponent from "./chart/ChartComponent";
 import LoginPage from "./LoginPage";
 import Table from "./tabel/Table"
 import { useEffect, useState } from "react";

@@ -47,7 +47,7 @@ dispatch(getData());
       }
     }
     setData(prevData =>
-      prevData.map(item =>
+      prevData?.map(item =>
         item.id === id ? { ...item, [field]: value } : item
       )
     );
@@ -67,7 +67,6 @@ dispatch(getData());
   };
 
   const handleAddingRecord = () => {
-    //  sending the updated data to a server
     console.log('Saved data:', data);
   };
 
@@ -97,7 +96,7 @@ dispatch(getData());
         <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-lg">
           <Theader />
           <tbody>
-            {data?.map((item, index) => (
+            {data?.length && data?.map((item, index) => (
               <Trow isEditing={isEditing} item={item} key={index} index={index} handleChange={handleChange} warning={warning} userType={userType}/>
             ))}
           </tbody>
@@ -108,7 +107,7 @@ dispatch(getData());
       )}
     </div>
      }
-    <ChartComponent data={data} />
+  { loading ? <Loading/> : <ChartComponent data={data} />}
     </>
   );
 };
